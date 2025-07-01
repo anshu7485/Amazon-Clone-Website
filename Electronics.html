@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronics - Amazon Clone</title>
+    <link rel="stylesheet" href="Electronics.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header class="electronics-header">
+        <a href="index.html" class="logo-link" aria-label="Amazon Home">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" class="amazon-logo-img">
+        </a>
+        <nav class="electronics-nav">
+            <a href="index.html">Home</a>
+            <a href="#">Today's Deals</a>
+            <a href="#">Customer Service</a>
+            <a href="#">Cart <i class="fa fa-shopping-cart"></i></a>
+        </nav>
+    </header>
+    <main class="electronics-main">
+        <aside class="electronics-sidebar">
+            <h3><i class="fa fa-filter"></i> Filters</h3>
+            <div class="filter-group" id="category-filters">
+                <label><input type="checkbox" value="All" checked> All</label>
+                <label><input type="checkbox" value="Mobiles"> Mobiles</label>
+                <label><input type="checkbox" value="Laptops"> Laptops</label>
+                <label><input type="checkbox" value="Headphones"> Headphones</label>
+                <label><input type="checkbox" value="Accessories"> Accessories</label>
+            </div>
+            <h4>Price</h4>
+            <div class="filter-group" id="price-filters">
+                <label><input type="radio" name="price" value="all" checked> All</label>
+                <label><input type="radio" name="price" value="under-1000"> Under ₹1,000</label>
+                <label><input type="radio" name="price" value="1000-10000"> ₹1,000 - ₹10,000</label>
+                <label><input type="radio" name="price" value="10000-50000"> ₹10,000 - ₹50,000</label>
+                <label><input type="radio" name="price" value="over-50000"> Over ₹50,000</label>
+            </div>
+            <div class="sidebar-banner">
+                <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=400&q=80" alt="Electronics Offer">
+                <p>Special Offer: Up to 40% off on select electronics!</p>
+            </div>
+        </aside>
+        <section class="electronics-products">
+            <div class="electronics-hero-banner">
+                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80" alt="Electronics Banner">
+                <div class="banner-text">
+                    <h2>Electronics</h2>
+                    <p>Shop the latest gadgets, mobiles, laptops, and more!</p>
+                </div>
+            </div>
+            <div class="products-grid" id="products-grid">
+                <!-- Mobiles -->
+                <div class="product-card" data-category="Mobiles" data-price="899">
+                    <img src="https://m.media-amazon.com/images/I/71hIfcIPyxS._AC_UL320_.jpg" alt="Budget Mobile">
+                    <div class="product-info">
+                        <h3>Budget Mobile</h3>
+                        <div class="product-rating">
+                            <span>4.0</span>
+                            <i class="fa fa-star"></i>
+                            <span class="rating-count">(1,100)</span>
+                        </div>
+                        <p class="product-price">₹899 <span class="old-price">₹1,299</span></p>
+                        <button class="add-cart-btn"><i class="fa fa-cart-plus"></i> Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="Mobiles" data-price="14999">
+                    <img src="https://m.media-amazon.com/images/I/71Q8gm97H8L._AC_UL320_.jpg" alt="Smartphone XYZ">
+                    <div class="product-info">
+                        <h3>Smartphone XYZ</h3>
+                        <div class="product-rating">
+                            <span>4.5</span>
+                            <i class="fa fa-star"></i>
+                            <span class="rating-count">(2,345)</span>
+                        </div>
+                        <p class="product-price">₹14,999 <span class="old-price">₹19,999</span></p>
+                        <button class="add-cart-btn"><i class="fa fa-cart-plus"></i> Add to Cart</button>
+                    </div>
+                </div>
+                <!-- Laptops -->
+                <div class="product-card" data-category="Laptops" data-price="9999">
+                    <img src="https://m.media-amazon.com/images/I/71vFKBpKakL._AC_UL320_.jpg" alt="Mini Laptop">
+                    <div class="product-info">
+                        <h3>Mini Laptop</h3>
+                        <div class="product-rating">
+                            <span>4.1</span>
+                            <i class="fa fa-star"></i>
+                            <span class="rating-count">(900)</span>
+                        </div>
+                        <p class="product-price">₹9,999 <span class="old-price">₹12,999</span></p>
+                        <button class="add-cart-btn"><i class="fa fa-cart-plus"></i> Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="Laptops" data-price="49999">
+                    <img src="https://m.media-amazon.com/images/I/71jG+e7roXL._AC_UL320_.jpg" alt="Laptop ABC">
+                    <div class="product-info">
+                        <h3>Laptop ABC</h3>
+                        <div class="product-rating">
+                            <span>4.2</span>
+                            <i class="fa fa-star"></i>
+                            <span class="rating-count">(1,120)</span>
+                        </div>
+                        <p class="product-price">₹49,999 <span class="old-price">₹59,999</span></p>
+                        <button class="add-cart-btn"><i class="fa fa-cart-plus"></i> Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="Laptops" data-price="59999">
+                    <img src="https://m.media-amazon.com/images/I/71TPda7cwUL._AC_UL320_.jpg" alt="Gaming Laptop">
+                    <div class="product-info">
+                        <h3>Gaming Laptop</h3>
+                        <div class="product-rating">
+                            <span>4.6</span>
+                            <i class="fa fa-star"></i>
+                            <span class="rating-count">(2,000)</span>
+                        </div>
+                        <p class="product-price">₹59,999 <span class="old-price">₹69,999</span></p>
+                        <button class="add-cart-btn"><i class="fa fa-cart-plus"></i> Add to Cart</button>
+                    </div>
+                </div>
+                <!-- Headphones -->
+                <div class="product-card" data-category="Headphones" data-price="499">
+                    <img src="https://m.media-amazon.com/images/I/61CGHv6kmWL._AC_UL320_.jpg" alt="Wired Headphones">
+                    <div class="product-info">
+                        <h3>Wired Headphones</h3>
+                        <div class="product-rating">
+                            <span>4.0</span>
+                            <i class="fa fa-star"></i>
+                            <span class="rating-count">(1,500)</span>
+                        </div>
+                        <p class="product-price">₹499 <span class="old-price">₹899</span></p>
+                        <button class="add-cart-btn"><i class="fa fa-cart-plus"></i> Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="Headphones" data-price="2499">
+                    <img src="https://m.media-amazon.com/images/I/61n6Ovq6EdL._AC_UL320_.jpg" alt="Wireless Headphones">
+                    <div class="product-info">
+                        <h3>Wireless Headphones</h3>
+                        <div class="product-rating">
+                            <span>4.7</span>
+                            <i class="fa fa-star"></i>
+                            <span class="rating-count">(3,002)</span>
+                        </div>
+                        <p class="product-price">₹2,499 <span class="old-price">₹3,999</span></p>
+                        <button class="add-cart-btn"><i class="fa fa-cart-plus"></i> Add to Cart</button>
+                    </div>
+                </div>
+                <!-- Accessories -->
+                <div class="product-card" data-category="Accessories" data-price="799">
+                    <img src="https://m.media-amazon.com/images/I/61kWB+uzR2L._AC_UL320_.jpg" alt="USB Cable">
+                    <div class="product-info">
+                        <h3>USB Cable</h3>
+                        <div class="product-rating">
+                            <span>4.3</span>
+                            <i class="fa fa-star"></i>
+                            <span class="rating-count">(2,100)</span>
+                        </div>
+                        <p class="product-price">₹799 <span class="old-price">₹1,199</span></p>
+                        <button class="add-cart-btn"><i class="fa fa-cart-plus"></i> Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="Accessories" data-price="1299">
+                    <img src="https://m.media-amazon.com/images/I/61n6Ovq6EdL._AC_UL320_.jpg" alt="Bluetooth Speaker">
+                    <div class="product-info">
+                        <h3>Bluetooth Speaker</h3>
+                        <div class="product-rating">
+                            <span>4.3</span>
+                            <i class="fa fa-star"></i>
+                            <span class="rating-count">(1,800)</span>
+                        </div>
+                        <p class="product-price">₹1,299 <span class="old-price">₹1,999</span></p>
+                        <button class="add-cart-btn"><i class="fa fa-cart-plus"></i> Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card" data-category="Accessories" data-price="59999">
+                    <img src="https://m.media-amazon.com/images/I/81r1A5F1g1L._AC_UL320_.jpg" alt="Smart TV">
+                    <div class="product-info">
+                        <h3>Smart TV 55"</h3>
+                        <div class="product-rating">
+                            <span>4.8</span>
+                            <i class="fa fa-star"></i>
+                            <span class="rating-count">(3,800)</span>
+                        </div>
+                        <p class="product-price">₹59,999 <span class="old-price">₹79,999</span></p>
+                        <button class="add-cart-btn"><i class="fa fa-cart-plus"></i> Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="electronics-footer">
+        <p>&copy; 2024 Amazon Clone. All rights reserved.</p>
+    </footer>
+    <script src="Electronics.js"></script>
+</body>
+</html>
+</html>

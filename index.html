@@ -5,7 +5,7 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Amazon</title>
-   <link rel="stylesheet" href="style_Amazon.css">
+   <link rel="stylesheet" href="style.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
       integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
       crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -13,90 +13,142 @@
 
 <body>
    <header>
-      <nav class="navbar">
-         <div class="nav-logo border" aria-label="Amazon Home">
-            <!-- Amazon SVG Logo -->
-            <a href="#" class="logo-link" aria-label="Amazon Home">
-               <svg width="110" height="40" viewBox="0 0 110 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <text x="0" y="28" font-family="Arial Black, Arial, sans-serif" font-size="28" fill="#FF9900">amazon
-                  </text>
-                  <path d="M10 32 Q55 45 100 32" stroke="#FF9900" stroke-width="3" fill="none" />
-                  <circle cx="95" cy="32" r="3" fill="#FF9900" />
-               </svg>
-            </a>
-         </div>
-         <div class="nav-address border" tabindex="0">
-            <p class="add-first">Deliver to</p>
-            <div class="add-icon">
-               <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff" style="vertical-align:middle;">
-                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
-               </svg>
-               <p class="add-second">India</p>
+      <nav class="navbar amazon-navbar">
+         <div class="navbar-container">
+            <!-- Logo -->
+            <div class="nav-logo border" aria-label="Amazon Home">
+               <a href="#" class="logo-link" aria-label="Amazon Home">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" class="amazon-logo-img">
+               </a>
+            </div>
+            <!-- Hamburger for mobile -->
+            <button class="nav-hamburger" id="nav-hamburger" aria-label="Open Menu">
+               <span class="bar"></span>
+               <span class="bar"></span>
+               <span class="bar"></span>
+            </button>
+            <!-- Location -->
+            <div class="nav-address border" tabindex="0">
+               <span class="nav-line-1">Deliver to</span>
+               <div class="add-icon">
+                  <i class="fa fa-map-marker-alt"></i>
+                  <span class="nav-line-2">India</span>
+               </div>
+            </div>
+            <!-- Search -->
+            <form class="nav-search amazon-search" role="search">
+               <select class="search-select" aria-label="Search category" id="category-select">
+                  <option>All</option>
+                  <option value="Electronics" data-link="Electronics.html">Electronics</option>
+                  <option>Clothes</option>
+                  <option>Books</option>
+                  <option>Beauty</option>
+               </select>
+               <input placeholder="Search Amazon" class="search-input" aria-label="Search Amazon">
+               <button type="submit" class="search-icon" aria-label="Search">
+                  <i class="fa fa-search"></i>
+               </button>
+            </form>
+            <!-- Language -->
+            <div class="nav-lang border" tabindex="0">
+               <img src="https://flagcdn.com/in.svg" alt="IN" class="lang-flag">
+               <span class="lang-code">EN</span>
+               <i class="fa fa-caret-down"></i>
+            </div>
+            <!-- Account -->
+            <div class="nav-signin border nav-dropdown" tabindex="0">
+               <span class="nav-line-1">Hello, sign in</span>
+               <span class="nav-line-2">Account & Lists <i class="fa fa-caret-down"></i></span>
+               <div class="dropdown-menu"></div>
+            </div>
+            <!-- Orders -->
+            <div class="nav-return border" tabindex="0">
+               <span class="nav-line-1">Returns</span>
+               <span class="nav-line-2">& Orders</span>
+            </div>
+            <!-- Cart -->
+            <div class="nav-cart border" tabindex="0" aria-label="Cart" id="cart-btn">
+               <i class="fa fa-shopping-cart"></i>
+               <span class="cart-text">Cart</span>
+               <!-- <span class="cart-count" id="cart-count" aria-live="polite">0</span> -->
             </div>
          </div>
-         <form class="nav-search" role="search">
-            <select class="search-select" aria-label="Search category">
-               <option>All</option>
-               <option>Electronics</option>
-               <option>Clothes</option>
-               <option>Books</option>
-               <option>Beauty</option>
-            </select>
-            <input placeholder="Search Amazon" class="search-input" aria-label="Search Amazon">
-            <button type="submit" class="search-icon" aria-label="Search">
-               <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
-         </form>
-         <div class="nav-signin border" tabindex="0">
-            <p><span>Hello, sign in</span></p>
-            <p class="nav-second">Account & Lists <i class="fa fa-caret-down"></i></p>
-         </div>
-         <div class="nav-return border" tabindex="0">
-            <p><span>Returns</span></p>
-            <p class="nav-return">& Orders</p>
-         </div>
-         <div class="nav-cart border" tabindex="0" aria-label="Cart">
-            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-            <span class="cart-text">Cart</span>
+         <!-- Mobile menu -->
+         <div class="mobile-menu" id="mobile-menu">
+            <div class="mobile-menu-content">
+               <a href="#">Deliver to India</a>
+               <a href="#">Account & Lists</a>
+               <a href="#">Returns & Orders</a>
+               <a href="#">Cart</a>
+               <a href="#">Today's Deals</a>
+               <a href="#">Customer Service</a>
+               <a href="#">Registry</a>
+               <a href="#">Gift Cards</a>
+               <a href="#">Sell</a>
+            </div>
          </div>
       </nav>
-      <div class="panel">
-         <div class="panel-all border" tabindex="0">
-            <!-- SVG Hamburger Icon -->
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff" style="vertical-align:middle;">
-               <rect y="4" width="24" height="2" />
-               <rect y="11" width="24" height="2" />
-               <rect y="18" width="24" height="2" />
-            </svg>
-            <span>All</span>
-         </div>
-         <div class="panel-ops">
-            <p>Today's Deals</p>
-            <p>Customer Service</p>
-            <p>Registry</p>
-            <p>Gift Cards</p>
-            <p>Sell</p>
-         </div>
-         <div class="panel-deals">
-            <i class="fa fa-bolt" style="color:#FF9900;"></i>
-            Shop deals in Electronics
+      <div class="panel stylish-panel">
+         <div class="container panel-flex">
+            <div class="panel-all border" tabindex="0">
+               <!-- SVG Hamburger Icon -->
+               <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff" style="vertical-align:middle;">
+                  <rect y="4" width="24" height="2" />
+                  <rect y="11" width="24" height="2" />
+                  <rect y="18" width="24" height="2" />
+               </svg>
+               <span>All</span>
+            </div>
+            <div class="panel-ops">
+               <p>Today's Deals</p>
+               <p>Customer Service</p>
+               <p>Registry</p>
+               <p>Gift Cards</p>
+               <p>Sell</p>
+            </div>
+            <div class="panel-deals">
+               <i class="fa fa-bolt" style="color:#FF9900;"></i>
+               Shop deals in Electronics
+            </div>
          </div>
       </div>
    </header>
    <main>
-      <section class="hero-section">
-         <div class="hero-msg">
-            <p>
-               You are on amazon.com. You can also shop on Amazon India for millions of products with fast local delivery.
-               <a href="#" class="hero-link">Click here to go to amazon.in</a>
-            </p>
+      <section class="hero-section stylish-hero">
+         <div class="hero-slider" id="hero-slider">
+            <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1515168833906-d2a3b82b1e6e?auto=format&fit=crop&w=1400&q=80');">
+               <div class="hero-slide-content">
+                  <h2>Welcome to Amazon Clone</h2>
+                  <p>
+                     <span class="highlight">You are on amazon.com.</span>
+                     You can also shop on <span class="highlight">Amazon India</span> for millions of products with fast local delivery.
+                     <a href="#" class="hero-link stylish-hero-link">Click here to go to amazon.in</a>
+                  </p>
+               </div>
+            </div>
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1400&q=80');">
+               <div class="hero-slide-content">
+                  <h2>Big Deals on Electronics</h2>
+                  <p>Save up to 50% on top brands. Limited time only!</p>
+               </div>
+            </div>
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=1400&q=80');">
+               <div class="hero-slide-content">
+                  <h2>Fashion Trends 2024</h2>
+                  <p>Discover the latest in clothing and accessories.</p>
+               </div>
+            </div>
+            <div class="hero-slider-dots" id="hero-slider-dots">
+               <!-- Dots will be generated by JS -->
+            </div>
          </div>
       </section>
-      <section class="shop-section">
+      <section class="shop-section" id="shop-section">
          <div class="box">
             <div class="box-content">
                <h2>clothes</h2>
                <div class="box-img" style="background-image: url('box1_image.jpg');"></div>
+               <button class="add-to-cart-btn" data-product="Clothes">Add to Cart</button>
                <p>see more</p>
             </div>
          </div>
@@ -105,6 +157,7 @@
             <div class="box-content">
                <h2>health & person care</h2>
                <div class="box-img" style="background-image:url('box2_image.jpg');"></div>
+               <button class="add-to-cart-btn" data-product="Health & Person Care">Add to Cart</button>
                <p>see more</p>
             </div>
          </div>
@@ -113,6 +166,7 @@
             <div class="box-content">
                <h2>furniter</h2>
                <div class="box-img" style="background-image: url('box3_image.jpg');"></div>
+               <button class="add-to-cart-btn" data-product="Furniter">Add to Cart</button>
                <p>see more</p>
             </div>
          </div>
@@ -121,6 +175,7 @@
             <div class="box-content">
                <h2>Electronics</h2>
                <div class="box-img" style="background-image: url('box4_image.jpg');"></div>
+               <button class="add-to-cart-btn" data-product="Electronics">Add to Cart</button>
                <p>see more</p>
             </div>
          </div>
@@ -129,6 +184,7 @@
             <div class="box-content">
                <h2>Beauty picks</h2>
                <div class="box-img" style="background-image: url('box5_image.jpg');"></div>
+               <button class="add-to-cart-btn" data-product="Beauty Picks">Add to Cart</button>
                <p>see more</p>
             </div>
          </div>
@@ -137,6 +193,7 @@
             <div class="box-content">
                <h2>pet care</h2>
                <div class="box-img" style="background-image:url('box6_image.jpg');"></div>
+               <button class="add-to-cart-btn" data-product="Pet Care">Add to Cart</button>
                <p>see more</p>
             </div>
          </div>
@@ -145,6 +202,7 @@
             <div class="box-content">
                <h2>New Arrival in Toys </h2>
                <div class="box-img" style="background-image:url('box7_image.jpg');"></div>
+               <button class="add-to-cart-btn" data-product="New Arrival in Toys">Add to Cart</button>
                <p>see more</p>
             </div>
          </div>
@@ -155,6 +213,7 @@
                <div class="box-img"
                   style="background-image: url('https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&w=600');">
                </div>
+               <button class="add-to-cart-btn" data-product="Discover Fashion Trends">Add to Cart</button>
                <p>see more</p>
             </div>
          </div>
@@ -162,7 +221,7 @@
    </main>
    <footer>
       <div class="foot-panel1" tabindex="0">
-         <a href="#" class="back-to-top" aria-label="Back to Top">
+         <a href="#" class="back-to-top" aria-label="Back to Top" id="back-to-top-btn">
             <!-- SVG Up Arrow -->
             <svg width="24" height="24" viewBox="0 0 24 24" fill="#fff" style="vertical-align:middle;">
                <path d="M12 4l-8 8h6v8h4v-8h6z" />
@@ -224,6 +283,7 @@
          </div>
       </div>
    </footer>
+   <script src="main.js"></script>
 </body>
 
 </html>

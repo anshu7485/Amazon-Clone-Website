@@ -1,0 +1,261 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #e3e6e6;
+    color: #232f3e;
+}
+
+.electronics-header {
+    background: #131921;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    height: 60px;
+}
+.amazon-logo-img {
+    height: 38px;
+    margin-top: 6px;
+}
+.electronics-nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 24px;
+    font-size: 1.05em;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+.electronics-nav a:hover {
+    color: #febd69;
+}
+
+.electronics-main {
+    display: flex;
+    max-width: 1300px;
+    margin: 32px auto 0 auto;
+    gap: 32px;
+    min-height: 70vh;
+}
+
+.electronics-sidebar {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    padding: 24px 18px;
+    min-width: 220px;
+    max-width: 260px;
+    margin-bottom: 24px;
+    height: fit-content;
+}
+.electronics-sidebar h3, .electronics-sidebar h4 {
+    margin-top: 0;
+    color: #232f3e;
+}
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+.filter-group label {
+    font-size: 1em;
+    cursor: pointer;
+    margin-bottom: 2px;
+}
+.filter-group input[type="checkbox"], .filter-group input[type="radio"] {
+    accent-color: #f08804;
+    margin-right: 7px;
+}
+.filter-group input[type="checkbox"]:checked + span,
+.filter-group input[type="radio"]:checked + span {
+    color: #f08804;
+    font-weight: bold;
+}
+
+.electronics-products {
+    flex: 1;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    padding: 24px 24px 32px 24px;
+    min-width: 0;
+}
+.electronics-products h2 {
+    margin-top: 0;
+    color: #232f3e;
+    font-size: 2em;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+}
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 28px;
+}
+.product-card {
+    background: #f7f7fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    padding: 18px 12px 16px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.2s, transform 0.2s;
+    position: relative;
+}
+.product-card:hover {
+    box-shadow: 0 4px 18px #febd69a0;
+    transform: translateY(-4px) scale(1.03);
+}
+.product-card.filtered {
+    box-shadow: 0 0 0 3px #f08804;
+    transform: scale(1.04);
+    z-index: 2;
+}
+.product-card img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 12px;
+}
+.product-info h3 {
+    margin: 0 0 6px 0;
+    font-size: 1.1em;
+    color: #232f3e;
+}
+.product-price {
+    color: #b12704;
+    font-size: 1.15em;
+    margin-bottom: 10px;
+}
+.old-price {
+    color: #888;
+    text-decoration: line-through;
+    font-size: 0.95em;
+    margin-left: 8px;
+}
+.add-cart-btn {
+    background: #ffd814;
+    color: #111;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 18px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(255,153,0,0.08);
+    transition: background 0.2s;
+}
+.add-cart-btn:hover {
+    background: #f7ca00;
+    color: #232f3e;
+}
+
+.electronics-footer {
+    background: #232f3e;
+    color: #fff;
+    text-align: center;
+    padding: 18px 0 12px 0;
+    margin-top: 40px;
+    font-size: 1em;
+    letter-spacing: 1px;
+    border-radius: 10px 10px 0 0;
+}
+
+.electronics-hero-banner {
+    width: 100%;
+    position: relative;
+    margin-bottom: 28px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+    display: flex;
+    align-items: flex-end;
+    min-height: 180px;
+    background: #f5f6f8;
+}
+.electronics-hero-banner img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    opacity: 0.92;
+}
+.electronics-hero-banner .banner-text {
+    position: absolute;
+    left: 32px;
+    bottom: 18px;
+    color: #232f3e;
+    background: rgba(255,255,255,0.92);
+    padding: 18px 32px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.sidebar-banner {
+    margin-top: 32px;
+    text-align: center;
+}
+.sidebar-banner img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+.sidebar-banner p {
+    font-size: 1em;
+    color: #b12704;
+    font-weight: bold;
+}
+.product-rating {
+    color: #f08804;
+    font-size: 1em;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.product-rating .fa-star {
+    margin-left: 2px;
+}
+.rating-count {
+    color: #555;
+    font-size: 0.95em;
+    margin-left: 4px;
+}
+
+@media (max-width: 900px) {
+    .electronics-main {
+        flex-direction: column;
+        gap: 18px;
+        padding: 0 8px;
+    }
+    .electronics-sidebar {
+        max-width: 100%;
+        min-width: 0;
+        width: 100%;
+        margin-bottom: 0;
+    }
+    .electronics-products {
+        padding: 18px 8px 24px 8px;
+    }
+    .products-grid {
+        gap: 16px;
+    }
+}
+@media (max-width: 600px) {
+    .electronics-header {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 4px;
+        gap: 8px;
+    }
+    .electronics-nav a {
+        margin-left: 10px;
+        font-size: 0.98em;
+    }
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+    .product-card img {
+        width: 90px;
+        height: 90px;
+    }
+}

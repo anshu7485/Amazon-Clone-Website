@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothes - Amazon Clone</title>
+    <link rel="stylesheet" href="Electronics.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .clothes-hero-banner {
+            width: 100%;
+            position: relative;
+            margin-bottom: 28px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+            display: flex;
+            align-items: flex-end;
+            min-height: 180px;
+            background: #f5f6f8;
+        }
+        .clothes-hero-banner img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            opacity: 0.92;
+        }
+        .clothes-hero-banner .banner-text {
+            position: absolute;
+            left: 32px;
+            bottom: 18px;
+            color: #232f3e;
+            background: rgba(255,255,255,0.92);
+            padding: 18px 32px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 28px;
+        }
+        .product-card {
+            background: #f7f7fa;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            padding: 18px 12px 16px 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: box-shadow 0.2s, transform 0.2s;
+            position: relative;
+        }
+        .product-card:hover {
+            box-shadow: 0 4px 18px #febd69a0;
+            transform: translateY(-4px) scale(1.03);
+        }
+        .product-card img {
+            width: 120px;
+            height: 160px;
+            object-fit: cover;
+            margin-bottom: 12px;
+            background: #fff;
+            border-radius: 6px;
+        }
+        .product-info h3 {
+            margin: 0 0 6px 0;
+            font-size: 1.1em;
+            color: #232f3e;
+        }
+        .product-price {
+            color: #b12704;
+            font-size: 1.15em;
+            margin-bottom: 10px;
+        }
+        .old-price {
+            color: #888;
+            text-decoration: line-through;
+            font-size: 0.95em;
+            margin-left: 8px;
+        }
+        .add-cart-btn {
+            background: #ffd814;
+            color: #111;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 18px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(255,153,0,0.08);
+            transition: background 0.2s;
+        }
+        .add-cart-btn:hover {
+            background: #f7ca00;
+            color: #232f3e;
+        }
+        .product-rating {
+            color: #f08804;
+            font-size: 1em;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .product-rating .fa-star {
+            margin-left: 2px;
+        }
+        .rating-count {
+            color: #555;
+            font-size: 0.95em;
+            margin-left: 4px;
+        }
+        @media (max-width: 900px) {
+            .products-grid {
+                gap: 16px;
+            }
+        }
+        @media (max-width: 600px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            .product-card img {
+                width: 90px;
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="electronics-header">
+        <a href="index.html" class="logo-link" aria-label="Amazon Home">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" class="amazon-logo-img">
+        </a>
+        <nav class="electronics-nav">
+            <a href="index.html">Home</a>
+            <a href="#">Today's Deals</a>
+            <a href="#">Customer Service</a>
+            <a href="#">Cart <i class="fa fa-shopping-cart"></i></a>
+        </nav>
+    </header>
+    <main class="electronics-main">
+        <section class="electronics-products">
+            <div class="clothes-hero-banner">
+                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/Fashion/Event/JanART24/AFpage/AF-PC-3000._CB585785012_.jpg" alt="Clothes Banner">
+                <div class="banner-text">
+                    <h2>Clothing & Fashion</h2>
+                    <p>Shop the latest trends in men's, women's, and kids' fashion!</p>
+                </div>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="https://m.media-amazon.com/images/I/71o0Q2b5yXL._AC_UL320_.jpg" alt="Men's T-Shirt">
+                    <div class="product-info">
+                        <h3>Men's Cotton T-Shirt</h3>
+                        <div class="product-rating">
+                            <span>4.3</span>
+                            <i class="fa fa-star"></i>
+                            <span class="rating-count">(8,120)</span>
+                        </div>
+                        <p class="product-price">₹399 <span class="old-price">₹799</span></p>
+                        <button class="add-cart-btn"><i class="fa fa-cart-plus"></i> Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://m.media-amazon.com/images/I/61b6hKpQ3GL._AC_UL320_.jpg" alt="Women's Kurti">
+                    <div class="product-info">
+                        <h3>Women's Printed Kurti</h3>
+                        <div class="product-rating">
+                            <span>4.5</span>
+                            <i class="fa fa-star"></i>
+                            <span class="rating-count">(5,210)</span>
+                        </div>
+                        <p class="product-price">₹599 <span class="old-price">₹1,299</span></p>
+                        <button class="add-cart-btn"><i class="fa fa-cart-plus"></i> Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://m.media-amazon.com/images/I/81w1b5l5UIL._AC_UL320_.jpg" alt="Men's Jeans">
+                    <div class="product-info">
+                        <h3>Men's Slim Jeans</h3>
+                        <div class="product-rating">
+                            <span>4.2</span>
+                            <i class="fa fa-star"></i>
+                            <span class="rating-count">(3,900)</span>
+                        </div>
+                        <p class="product-price">₹999 <span class="old-price">₹1,999</span></p>
+                        <button class="add-cart-btn"><i class="fa fa-cart-plus"></i> Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://m.media-amazon.com/images/I/71l2wQpQKGL._AC_UL320_.jpg" alt="Women's Saree">
+                    <div class="product-info">
+                        <h3>Women's Silk Saree</h3>
+                        <div class="product-rating">
+                            <span>4.6</span>
+                            <i class="fa fa-star"></i>
+                            <span class="rating-count">(2,100)</span>
+                        </div>
+                        <p class="product-price">₹1,299 <span class="old-price">₹2,499</span></p>
+                        <button class="add-cart-btn"><i class="fa fa-cart-plus"></i> Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://m.media-amazon.com/images/I/61w6bFQb6GL._AC_UL320_.jpg" alt="Kids Dress">
+                    <div class="product-info">
+                        <h3>Kids' Party Dress</h3>
+                        <div class="product-rating">
+                            <span>4.4</span>
+                            <i class="fa fa-star"></i>
+                            <span class="rating-count">(1,800)</span>
+                        </div>
+                        <p class="product-price">₹749 <span class="old-price">₹1,499</span></p>
+                        <button class="add-cart-btn"><i class="fa fa-cart-plus"></i> Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://m.media-amazon.com/images/I/61n5l6yQJGL._AC_UL320_.jpg" alt="Men's Jacket">
+                    <div class="product-info">
+                        <h3>Men's Casual Jacket</h3>
+                        <div class="product-rating">
+                            <span>4.1</span>
+                            <i class="fa fa-star"></i>
+                            <span class="rating-count">(2,500)</span>
+                        </div>
+                        <p class="product-price">₹1,499 <span class="old-price">₹2,999</span></p>
+                        <button class="add-cart-btn"><i class="fa fa-cart-plus"></i> Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://m.media-amazon.com/images/I/61pQK7hA5sL._AC_UL320_.jpg" alt="Women's Top">
+                    <div class="product-info">
+                        <h3>Women's Casual Top</h3>
+                        <div class="product-rating">
+                            <span>4.3</span>
+                            <i class="fa fa-star"></i>
+                            <span class="rating-count">(3,100)</span>
+                        </div>
+                        <p class="product-price">₹399 <span class="old-price">₹899</span></p>
+                        <button class="add-cart-btn"><i class="fa fa-cart-plus"></i> Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://m.media-amazon.com/images/I/61Q0Q7hA5sL._AC_UL320_.jpg" alt="Men's Shirt">
+                    <div class="product-info">
+                        <h3>Men's Formal Shirt</h3>
+                        <div class="product-rating">
+                            <span>4.2</span>
+                            <i class="fa fa-star"></i>
+                            <span class="rating-count">(2,800)</span>
+                        </div>
+                        <p class="product-price">₹699 <span class="old-price">₹1,399</span></p>
+                        <button class="add-cart-btn"><i class="fa fa-cart-plus"></i> Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="electronics-footer">
+        <p>&copy; 2024 Amazon Clone. All rights reserved.</p>
+    </footer>
+</body>
+</html>
