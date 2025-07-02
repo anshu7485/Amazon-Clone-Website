@@ -1,6 +1,6 @@
 // Add to Cart logic
 document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
+    btn.addEventListener('click', function () {
         let countElem = document.getElementById('cart-count');
         let count = parseInt(countElem.textContent, 10) || 0;
         countElem.textContent = count + 1;
@@ -9,7 +9,7 @@ document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
 });
 
 // Back to Top smooth scroll
-document.getElementById('back-to-top-btn').addEventListener('click', function(e) {
+document.getElementById('back-to-top-btn').addEventListener('click', function (e) {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
@@ -17,10 +17,10 @@ document.getElementById('back-to-top-btn').addEventListener('click', function(e)
 // Search bar focus effect
 const searchInput = document.querySelector('.search-input');
 if (searchInput) {
-    searchInput.addEventListener('focus', function() {
+    searchInput.addEventListener('focus', function () {
         this.style.boxShadow = '0 0 5px 2px #FF9900';
     });
-    searchInput.addEventListener('blur', function() {
+    searchInput.addEventListener('blur', function () {
         this.style.boxShadow = '';
     });
 }
@@ -50,7 +50,7 @@ window.addEventListener('resize', () => {
 });
 
 // Hero slider logic
-(function() {
+(function () {
     const slides = document.querySelectorAll('.hero-slide');
     const dotsContainer = document.getElementById('hero-slider-dots');
     let current = 0;
@@ -90,18 +90,26 @@ window.addEventListener('resize', () => {
     resetTimer();
 })();
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Redirect to Electronics.html if Electronics is selected in search
+document.addEventListener('DOMContentLoaded', function () {
+    // Single handler for all category redirects in search
     const navSearchForm = document.querySelector('.nav-search');
     const categorySelect = document.getElementById('category-select');
     if (navSearchForm && categorySelect) {
-        navSearchForm.addEventListener('submit', function(e) {
-            // Check both value and text for "Electronics" (case-insensitive)
+        navSearchForm.addEventListener('submit', function (e) {
             const selectedOption = categorySelect.options[categorySelect.selectedIndex];
-            if (
-                (categorySelect.value && categorySelect.value.trim().toLowerCase() === 'electronics') ||
-                (selectedOption && selectedOption.text.trim().toLowerCase() === 'electronics')
-            ) {
+            const val = categorySelect.value.trim().toLowerCase();
+            const text = selectedOption.text.trim().toLowerCase();
+            if (val === 'books' || text === 'books') {
+                e.preventDefault();
+                window.location.href = 'Books.html';
+                return false;
+            }
+            if (val === 'clothes' || text === 'clothes') {
+                e.preventDefault();
+                window.location.href = 'clothes.html';
+                return false;
+            }
+            if (val === 'electronics' || text === 'electronics') {
                 e.preventDefault();
                 window.location.href = 'Electronics.html';
                 return false;
@@ -113,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Redirect to Electronics.html when "see more" or box is clicked
     document.querySelectorAll('.box-content p, .box-content .see-more').forEach(link => {
         if (link.textContent.trim().toLowerCase().includes('electronics')) {
-            link.addEventListener('click', function(e) {
+            link.addEventListener('click', function (e) {
                 e.preventDefault();
                 window.location.href = 'Electronics.html';
             });
@@ -123,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.box').forEach(box => {
         const h2 = box.querySelector('h2');
         if (h2 && h2.textContent.trim().toLowerCase() === 'electronics') {
-            box.addEventListener('click', function(e) {
+            box.addEventListener('click', function (e) {
                 // Prevent double navigation if "Add to Cart" or "see more" is clicked
                 if (
                     e.target.classList.contains('add-to-cart-btn') ||
@@ -134,32 +142,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Redirect to Clothes.html if Clothes is selected in search
-    const navSearchForm2 = document.querySelector('.nav-search');
-    const categorySelect2 = document.getElementById('category-select');
-    if (navSearchForm2 && categorySelect2) {
-        navSearchForm2.addEventListener('submit', function(e) {
-            const selectedOption = categorySelect2.options[categorySelect2.selectedIndex];
-            const val = categorySelect2.value.trim().toLowerCase();
-            const text = selectedOption.text.trim().toLowerCase();
-            if (val === 'clothes' || text === 'clothes') {
-                e.preventDefault();
-                window.location.href = 'clothes.html';
-                return false;
-            }
-            if (val === 'electronics' || text === 'electronics') {
-                e.preventDefault();
-                window.location.href = 'Electronics.html';
-                return false;
-            }
-            // ...other search logic if any...
-        });
-    }
-
     // Redirect to Clothes.html when "see more" or box is clicked
     document.querySelectorAll('.box-content p, .box-content .see-more').forEach(link => {
         if (link.textContent.trim().toLowerCase().includes('clothes')) {
-            link.addEventListener('click', function(e) {
+            link.addEventListener('click', function (e) {
                 e.preventDefault();
                 window.location.href = 'clothes.html';
             });
@@ -169,7 +155,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.box').forEach(box => {
         const h2 = box.querySelector('h2');
         if (h2 && h2.textContent.trim().toLowerCase() === 'clothes') {
-            box.addEventListener('click', function(e) {
+            box.addEventListener('click', function (e) {
                 // Prevent double navigation if "Add to Cart" or "see more" is clicked
                 if (
                     e.target.classList.contains('add-to-cart-btn') ||
@@ -180,37 +166,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Redirect to Books.html if Books is selected in search
-    const navSearchForm = document.querySelector('.nav-search');
-    const categorySelect = document.getElementById('category-select');
-    if (navSearchForm && categorySelect) {
-        navSearchForm.addEventListener('submit', function(e) {
-            const selectedOption = categorySelect.options[categorySelect.selectedIndex];
-            const val = categorySelect.value.trim().toLowerCase();
-            const text = selectedOption.text.trim().toLowerCase();
-            if (val === 'books' || text === 'books') {
-                e.preventDefault();
-                window.location.href = 'Books.html';
-                return false;
-            }
-            if (val === 'clothes' || text === 'clothes') {
-                e.preventDefault();
-                window.location.href = 'clothes.html';
-                return false;
-            }
-            if (val === 'electronics' || text === 'electronics') {
-                e.preventDefault();
-                window.location.href = 'Electronics.html';
-                return false;
-            }
-            // ...other search logic if any...
-        });
-    }
-
     // Redirect to Books.html when "see more" or box is clicked
     document.querySelectorAll('.box-content p, .box-content .see-more').forEach(link => {
         if (link.textContent.trim().toLowerCase().includes('books')) {
-            link.addEventListener('click', function(e) {
+            link.addEventListener('click', function (e) {
                 e.preventDefault();
                 window.location.href = 'Books.html';
             });
@@ -220,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.box').forEach(box => {
         const h2 = box.querySelector('h2');
         if (h2 && h2.textContent.trim().toLowerCase() === 'books') {
-            box.addEventListener('click', function(e) {
+            box.addEventListener('click', function (e) {
                 // Prevent double navigation if "Add to Cart" or "see more" is clicked
                 if (
                     e.target.classList.contains('add-to-cart-btn') ||
@@ -230,31 +189,70 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     });
+});
+window.location.href = 'Books.html';
+return false;
+            
+if (val === 'clothes' || text === 'clothes') {
+    e.preventDefault();
+    window.location.href = 'clothes.html';
+    return false;
+}
+if (val === 'electronics' || text === 'electronics') {
+    e.preventDefault();
+    window.location.href = 'Electronics.html';
+    return false;
+}
+         
+    
 
-    // Single handler for all category redirects in search
-    const navSearchForm = document.querySelector('.nav-search');
-    const categorySelect = document.getElementById('category-select');
-    if (navSearchForm && categorySelect) {
-        navSearchForm.addEventListener('submit', function(e) {
-            const selectedOption = categorySelect.options[categorySelect.selectedIndex];
-            const val = categorySelect.value.trim().toLowerCase();
-            const text = selectedOption.text.trim().toLowerCase();
-            if (val === 'books' || text === 'books') {
-                e.preventDefault();
-                window.location.href = 'Books.html';
-                return false;
-            }
-            if (val === 'clothes' || text === 'clothes') {
-                e.preventDefault();
-                window.location.href = 'clothes.html';
-                return false;
-            }
-            if (val === 'electronics' || text === 'electronics') {
-                e.preventDefault();
-                window.location.href = 'Electronics.html';
-                return false;
-            }
-            // ...other search logic if any...
+// Redirect to Books.html when "see more" or box is clicked
+document.querySelectorAll('.box-content p, .box-content .see-more').forEach(link => {
+    if (link.textContent.trim().toLowerCase().includes('books')) {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            window.location.href = 'Books.html';
         });
     }
 });
+// For clicking the Books box itself
+document.querySelectorAll('.box').forEach(box => {
+    const h2 = box.querySelector('h2');
+    if (h2 && h2.textContent.trim().toLowerCase() === 'books') {
+        box.addEventListener('click', function (e) {
+            // Prevent double navigation if "Add to Cart" or "see more" is clicked
+            if (
+                e.target.classList.contains('add-to-cart-btn') ||
+                (e.target.classList.contains('see-more') && e.target.textContent.trim().toLowerCase().includes('books'))
+            ) return;
+            window.location.href = 'Books.html';
+        });
+    }
+});
+
+// Single handler for all category redirects in search
+const navSearchForm = document.querySelector('.nav-search');
+const categorySelect = document.getElementById('category-select');
+if (navSearchForm && categorySelect) {
+    navSearchForm.addEventListener('submit', function (e) {
+        const selectedOption = categorySelect.options[categorySelect.selectedIndex];
+        const val = categorySelect.value.trim().toLowerCase();
+        const text = selectedOption.text.trim().toLowerCase();
+        if (val === 'books' || text === 'books') {
+            e.preventDefault();
+            window.location.href = 'Books.html';
+            return false;
+        }
+        if (val === 'clothes' || text === 'clothes') {
+            e.preventDefault();
+            window.location.href = 'clothes.html';
+            return false;
+        }
+        if (val === 'electronics' || text === 'electronics') {
+            e.preventDefault();
+            window.location.href = 'Electronics.html';
+            return false;
+        }
+        // ...other search logic if any...
+    });
+}
